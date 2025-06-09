@@ -4,82 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>TeeTrend | Login/Register</title>
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-    body {
-      background: linear-gradient(to right, #434343, #000000);
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      background: #1c1c1c;
-      padding: 40px;
-      width: 100%;
-      max-width: 400px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.6);
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-
-    label {
-      display: block;
-      margin-top: 15px;
-      font-size: 14px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      margin-top: 5px;
-      background: #333;
-      color: white;
-    }
-
-    .btn {
-      width: 100%;
-      padding: 12px;
-      margin-top: 20px;
-      background: #ff5e00;
-      color: white;
-      border: none;
-      font-weight: bold;
-      border-radius: 5px;
-      cursor: pointer;
-    }
-
-    .toggle-link {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 14px;
-    }
-
-    .toggle-link a {
-      color: #00d4ff;
-      text-decoration: none;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 480px) {
-      .container {
-        margin: 0 15px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
+  
 </head>
 <body>
 
@@ -96,8 +22,6 @@
 
       <button class="btn" type="submit">Login</button>
     </form>
-
-    <!-- Register Form -->
     <form id="registerForm" class="hidden">
       <label for="regName">Full Name</label>
       <input type="text" id="regName" required />
@@ -117,37 +41,6 @@
     </div>
   </div>
 
-  <script>
-    const loginForm = document.getElementById("loginForm");
-    const registerForm = document.getElementById("registerForm");
-    const toggleLink = document.getElementById("toggleLink");
-    const toggleText = document.getElementById("toggleText");
-    const formTitle = document.getElementById("formTitle");
-
-    toggleLink.addEventListener("click", () => {
-      loginForm.classList.toggle("hidden");
-      registerForm.classList.toggle("hidden");
-
-      const isLogin = loginForm.classList.contains("hidden");
-      formTitle.textContent = isLogin ? "Register on TeeTrend" : "Login to TeeTrend";
-      toggleText.textContent = isLogin ? "Already have an account?" : "Don't have an account?";
-      toggleLink.textContent = isLogin ? "Login" : "Register";
-    });
-
-    loginForm.addEventListener("submit", e => {
-      e.preventDefault();
-      const email = document.getElementById("loginEmail").value;
-      const password = document.getElementById("loginPassword").value;
-      alert(`Logged in with: ${email}`);
-    });
-
-    registerForm.addEventListener("submit", e => {
-      e.preventDefault();
-      const name = document.getElementById("regName").value;
-      const email = document.getElementById("regEmail").value;
-      const password = document.getElementById("regPassword").value;
-      alert(`Registered: ${name}, ${email}`);
-    });
-  </script>
+  <script src="index.js"></script>
 </body>
 </html>
